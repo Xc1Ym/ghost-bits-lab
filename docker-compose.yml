@@ -1,6 +1,12 @@
+networks:
+  ghost-net:
+    driver: bridge
+
 services:
   ghost-bits-lab:
     build: .
+    networks:
+      - ghost-net
     ports:
       - "8080:8080"
     environment:
